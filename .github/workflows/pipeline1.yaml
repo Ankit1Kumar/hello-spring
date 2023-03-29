@@ -24,16 +24,7 @@ jobs:
       - name: Build with Maven
         run: |
             mvn -B package --file pom.xml
-            mkdir artifacts && cp target/*.jar artifacts
-            
-      - name: Upload to s3
-        uses: ebuckthal/s3-upload-artifact@v2
-        with:
-          aws_key_id: ${{ secrets.AWS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-          aws_bucket: ${{ secrets.AWS_BUCKET }}
-          source_dir: artifacts
-    
+            mkdir Ankit1Kumar/hello-spring/artifacts && cp target/*.jar Ankit1Kumar/hello-spring/artifacts
       
   test:
     name: Unit tests
