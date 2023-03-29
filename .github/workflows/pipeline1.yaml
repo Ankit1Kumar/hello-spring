@@ -24,7 +24,7 @@ jobs:
       - name: Build with Maven
         run: |
             mvn -B package --file pom.xml
-            mkdir Ankit1Kumar/hello-spring/artifacts && cp target/*.jar Ankit1Kumar/hello-spring/artifacts
+            mkdir ./artifacts && cp target/*.jar ./artifacts
       
   test:
     name: Unit tests
