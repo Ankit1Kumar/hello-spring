@@ -27,7 +27,7 @@ jobs:
             mkdir artifacts && cp target/*.jar artifacts
             
       - name: Upload to s3
-        uses: ebuckthal/s3-upload-action@v2
+        uses: ebuckthal/s3-upload-artifact@v2
         with:
           aws_key_id: ${{ secrets.AWS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
