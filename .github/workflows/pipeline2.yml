@@ -3,15 +3,16 @@ name: Artifact handling
 on:
   workflow_run:
     workflows: [Java CI with maven]
-    types: [completed]
+    types:
+      - completed
     
- jobs:
+jobs:
    
-   download:
+  download:
      
-     runs-on: ubuntu-latest
-     steps:
-       - name: Download arifact from previous workflow
-         uses: actions/download-artifact@v3
-         with:
-           name: artifact1 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download arifact from previous workflow
+        uses: actions/download-artifact@v3
+        with:
+          name: artifact1 
