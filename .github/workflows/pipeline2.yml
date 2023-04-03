@@ -35,7 +35,8 @@ jobs:
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/artifact1.zip`, Buffer.from(download.data));
 
       - name: check
-        run: ls
+        run: |
+             ls && pwd
         
       - name: upload to s3
         uses: shallwefootball/s3-upload-action@master
@@ -44,4 +45,6 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
           source_dir: artifact1.zar
+      - name: check2
+        run: pwd
       
