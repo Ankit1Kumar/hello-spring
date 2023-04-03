@@ -35,13 +35,12 @@ jobs:
             });
             let fs = require('fs');
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/artifact1.zip`, Buffer.from(download.data));
-
+      - uses: actions/checkout@v2
       - name: check
         run: |
-             ls && pwd
-             cd ..
-             
-        
+             pwd && cd ..
+             ls 
+
       - name: upload to s3
         uses: shallwefootball/s3-upload-action@master
         with:
