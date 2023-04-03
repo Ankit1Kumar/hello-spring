@@ -12,6 +12,7 @@ jobs:
      
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: make folder
         run: mkdir -p folder && cd folder
         
@@ -35,10 +36,10 @@ jobs:
             });
             let fs = require('fs');
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/artifact1.zip`, Buffer.from(download.data));
-      - uses: actions/checkout@v2
+     
       - name: check
         run: |
-             pwd && cd ..
+             pwd 
              ls 
 
       - name: upload to s3
