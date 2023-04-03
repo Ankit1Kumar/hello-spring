@@ -12,7 +12,9 @@ jobs:
      
     runs-on: ubuntu-latest
     steps:
-      
+      - name: make folder
+        run: mkdir -p folder && cd folder
+        
       - name: Download arifact from previous workflow
         uses: actions/github-script@v6
         with:
@@ -37,6 +39,8 @@ jobs:
       - name: check
         run: |
              ls && pwd
+             cd ..
+             
         
       - name: upload to s3
         uses: shallwefootball/s3-upload-action@master
@@ -44,7 +48,5 @@ jobs:
           aws_key_id: ${{ secrets.AWS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
-          source_dir: /home/runner/work/hello-spring/hello-spring
-      - name: check2
-        run: pwd
-      
+          source_dir: folder
+    
