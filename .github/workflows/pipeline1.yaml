@@ -35,7 +35,7 @@ jobs:
           path: artifacts/
           
   test:
-    name: Unit tests
+    name: Unit test
     runs-on: ubuntu-latest
     
     steps:
