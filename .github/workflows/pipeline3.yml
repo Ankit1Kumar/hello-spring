@@ -53,5 +53,6 @@ jobs:
              cp artifact1.zip folder/
              git add folder
              git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
-             git push https://github.com/Ankit1Kumar/hello-spring.git
+             git push --set-upstream https://github.com/Ankit1Kumar/hello-spring.git artefacts-store
+             
        
