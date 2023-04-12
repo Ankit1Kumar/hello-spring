@@ -15,9 +15,13 @@ jobs:
       CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
       CI_COMMIT_AUTHOR: Continuous Integration
     steps:
-      - uses: actions/checkout@v2
-      - name: make folder
-        run: mkdir -p folder && cd folder
+      - name: clone
+        run: |
+             git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+             git config --global user.email "username@users.noreply.github.com"
+             git clone https://github.com/Ankit1Kumar/hello-spring.git
+             git checkout -b artefacts-store
+             mkdir -p folder && cd folder
         
       - name: Download arifact from previous workflow
         uses: actions/github-script@v6
@@ -42,10 +46,6 @@ jobs:
  
       - name: upload to git branch
         run: |
-             git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-             git config --global user.email "username@users.noreply.github.com"
-             git clone https://github.com/Ankit1Kumar/hello-spring.git
-             git checkout -b artefacts-store
              pwd
              ls
              git add . 
