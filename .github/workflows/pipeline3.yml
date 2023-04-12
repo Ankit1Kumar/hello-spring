@@ -11,6 +11,9 @@ jobs:
   download:
      
     runs-on: ubuntu-latest
+    env: 
+      CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
+      CI_COMMIT_AUTHOR: Continuous Integration
     steps:
       - uses: actions/checkout@v2
       - name: make folder
@@ -36,20 +39,13 @@ jobs:
             });
             let fs = require('fs');
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/artifact1.zip`, Buffer.from(download.data));
-   
-  upload: 
-       
-    runs-on: ubuntu-latest
-    env: 
-      CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
-      CI_COMMIT_AUTHOR: Continuous Integration
-    steps:
-      - uses: actions/checkout@v2
+ 
       - name: upload to git branch
         run: |
-             git branch artefacts-store
+             git checkout -b artefacts-store
              git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
              git config --global user.email "username@users.noreply.github.com"
+             git add
              git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
              git push
        
