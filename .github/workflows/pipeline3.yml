@@ -48,5 +48,5 @@ jobs:
              git checkout -b artefacts-store
              git add . 
              git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
-             git push
+             git push https://github.com/Ankit1Kumar/hello-spring.git
        
