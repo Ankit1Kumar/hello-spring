@@ -12,7 +12,7 @@ jobs:
      
     runs-on: ubuntu-latest
     env: 
-      CI_COMMIT_MESSAGE: Commited generated artifact 
+      CI_COMMIT_MESSAGE: Commiting generated artifact 
       CI_COMMIT_AUTHOR: Ankit Kumar
       CI_COMMIT_EMAIL: ankit.k@beehyv.com
   
