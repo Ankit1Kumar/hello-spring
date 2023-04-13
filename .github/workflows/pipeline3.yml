@@ -51,9 +51,8 @@ jobs:
         run: |
              pwd
              ls
-             cp artifact1.zip folder/
              git status
-             git add folder
+             git add artifact1.zip
              git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
              git remote set-url origin https://env.REPO_KEY@github.com/Ankit1Kumar/hello-spring.git
              git push -u origin artefacts-store
