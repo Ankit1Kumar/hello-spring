@@ -52,11 +52,11 @@ jobs:
              pwd
              ls
              git status
+             git checkout -b artefacts-store
              git add artifact1.zip
              git status
              git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
-             git branch -M main
              git remote add origin https://github.com/Ankit1Kumar/hello-spring.git
-             git push origin main
+             git push origin artefacts-store
              
        
