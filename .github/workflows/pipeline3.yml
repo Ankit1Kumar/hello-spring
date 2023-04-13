@@ -22,7 +22,7 @@ jobs:
              git config --global user.email "username@users.noreply.github.com"
              git init
              #git clone https://github.com/Ankit1Kumar/hello-spring.git
-             git checkout -b artefacts-store
+             #git checkout -b artefacts-store
              mkdir -p folder
              cd folder
         
@@ -55,7 +55,8 @@ jobs:
              git add artifact1.zip
              git status
              git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+             git branch -M main
              git remote add origin https://github.com/Ankit1Kumar/hello-spring.git
-             git push origin master
+             git push origin main
              
        
