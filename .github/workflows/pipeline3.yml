@@ -55,6 +55,7 @@ jobs:
              git add artifact1.zip
              git status
              git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
-             git push https://github.com/Ankit1Kumar/hello-spring.git artefacts-store
+             git remote add origin https://github.com/Ankit1Kumar/hello-spring.git
+             git push origin master
              
        
