@@ -54,7 +54,7 @@ jobs:
              git add artifact1.zip
              git status
              git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
-             git remote add origin https://env.REPO_KEY@github.com/Ankit1Kumar/hello-spring.git
+             git remote add origin https://${{secrets.ACCESS_TOKEN}}@github.com/Ankit1Kumar/hello-spring.git
              #git remote set-url origin https://Ankit1Kumar@github.com/Ankit1Kumar/hello-spring.git
              git push origin artefacts-store
              
