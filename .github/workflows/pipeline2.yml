@@ -1,10 +1,6 @@
 name: Artifact handling
 
-# on:
-  #workflow_run:
-    #workflows: [Java CI with maven]
-   # types:
-   #   - completed
+on: workflow_dispatch
     
 jobs:
    
