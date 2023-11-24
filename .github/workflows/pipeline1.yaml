@@ -31,7 +31,7 @@ jobs:
       - name: Storing artifact
         uses: actions/upload-artifact@v3
         with:
-          name: artifact1
+          name: artifact1-${{ github.ref_slug }}
           path: artifacts/
           
   test:
