@@ -30,18 +30,18 @@ jobs:
             
       - name: Extract branch name
         run: |
-          BRANCH_NAME=$(echo "${{ github.ref }}" | sed 's#refs/heads/##')
-          echo "Branch name: $BRANCH_NAME"
+          BRANCH_NAME=$(echo "${{ github.ref_slug }}" >> $GITHUB_ENV
+          echo "Branch name: $BRANCH_NAME" 
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: artifact1-${BRANCH_NAME}
+          name: artifact1-${{ env.BRANCH_NAME }}
           path: artifacts/
 
       - name: Print artifact name
         run: |
-          echo "Artifact name: artifact1-${BRANCH_NAME}"
+          echo "Artifact name: artifact1--${{ env.BRANCH_NAME }}"
           
   test:
     name: Unit test1
