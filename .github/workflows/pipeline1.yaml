@@ -28,10 +28,9 @@ jobs:
             mkdir artifacts && cp target/*.jar artifacts
             cd artifacts 
             
-      - name: Extract branch name
+      - name: Set branch name
         run: |
-          echo "BRANCH_NAME=$(echo "${{ github.ref_slug }}")" >> $GITHUB_ENV
-          echo "Branch name: $BRANCH_NAME" 
+          echo "BRANCH_NAME=$(echo "${{ github.ref }}" | sed 's#refs/heads/##')" >> $GITHUB_ENV
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
