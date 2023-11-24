@@ -27,7 +27,7 @@ jobs:
               repo: context.repo.repo,
             });
             let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "artifact1";
+              return artifact.name == "artifact1-";
             })[0];
 
             if (matchArtifact) {
