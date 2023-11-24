@@ -2,7 +2,7 @@ name: Java CI with maven
 
 on:
   push:
-    branches: [master]
+    branches: [try]
   pull_request:
     branches: [master]
   workflow_dispatch:
