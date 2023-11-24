@@ -30,7 +30,7 @@ jobs:
             
       - name: Extract branch name
         run: |
-          BRANCH_NAME=$(echo "${{ github.ref_slug }}" >> $GITHUB_ENV
+          echo "BRANCH_NAME=$(echo "${{ github.ref_slug }}")" >> $GITHUB_ENV
           echo "Branch name: $BRANCH_NAME" 
 
       - name: Upload artifact
