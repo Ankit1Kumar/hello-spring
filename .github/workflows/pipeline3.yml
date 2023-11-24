@@ -5,6 +5,7 @@ on:
     workflows: [Java CI with maven]
     types:
       - completed
+  workflow_dispatch:
     
 jobs:
    
@@ -27,7 +28,7 @@ jobs:
               repo: context.repo.repo,
             });
             let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "artifact1-";
+              return artifact.name == "artifact1-dgrtjhtghfgrthyj";
             })[0];
 
             if (matchArtifact) {
