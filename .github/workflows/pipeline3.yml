@@ -17,7 +17,9 @@ jobs:
       CI_COMMIT_EMAIL: ankit.k@beehyv.com
   
     steps:
-        
+      - name: Set branch name
+        run: |
+          echo "BRANCH_NAME=$(echo "${{ github.ref }}" | sed 's#refs/heads/##')" >> $GITHUB_ENV 
       - name: Download arifact from previous workflow
         uses: actions/github-script@v6
         with:
@@ -27,7 +29,7 @@ jobs:
               repo: context.repo.repo,
             });
             let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "artifact1";
+              return artifact.name == "artifact1-${{ env.BRANCH_NAME }}";
             })[0];
 
             if (matchArtifact) {
