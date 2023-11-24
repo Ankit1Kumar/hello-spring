@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Set branch name
         run: |
-          echo "BRANCH_NAME=$(echo "${{ github.event.ref }}" | sed 's#refs/heads/##')" >> $GITHUB_ENV 
+          echo "BRANCH_NAME=$(echo "${{ github.event.workflow_run.head_branch }}" | sed 's#refs/heads/##')" >> $GITHUB_ENV 
           echo "artifact1-${{ env.BRANCH_NAME }}"
       - name: Print artifact name
         run: |
