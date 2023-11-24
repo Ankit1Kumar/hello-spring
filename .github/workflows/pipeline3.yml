@@ -21,7 +21,7 @@ jobs:
       - name: Set branch name when workflow dispatch
         run: |
            if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-           echo "BRANCH_NAME=$(echo "${{ github.event.workflow_run.head_branch }}" | sed 's#refs/heads/##')" >> $GITHUB_ENV 
+           echo "BRANCH_NAME=$(echo "${{ github.ref }}" | sed 's#refs/heads/##')" >> $GITHUB_ENV 
            else
            echo "BRANCH_NAME=$(echo "${{ github.event.workflow_run.head_branch }}")" >> $GITHUB_ENV 
            fi
