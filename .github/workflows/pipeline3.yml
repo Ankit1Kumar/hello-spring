@@ -33,6 +33,7 @@ jobs:
         run: |
           echo "Artifact name: artifact1-${{ env.BRANCH_NAME }}"
       - name: Download arifact from previous workflow
+        if: github.event_name != 'workflow_dispatch'
         uses: actions/github-script@v6
         with:
           script: |
