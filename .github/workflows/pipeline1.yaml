@@ -1,7 +1,8 @@
 name: Java CI with mavend
 
 on:
-  
+  push:
+    branches: [master]
   pull_request:
     branches: [master]
   release:
