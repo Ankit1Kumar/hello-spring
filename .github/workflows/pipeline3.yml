@@ -18,6 +18,10 @@ jobs:
       CI_COMMIT_EMAIL: ankit.k@beehyv.com
   
     steps:
+      - name: t1
+        run: |
+          echo "${{ github.ref }}"
+          echo "${{ github.event.workflow_run.head_branch }}"
       - name: Set branch name when workflow dispatch
         run: |
            if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
