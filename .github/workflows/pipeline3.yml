@@ -41,7 +41,7 @@ jobs:
               repo: context.repo.repo,
             });
             let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "artifact1-${{ env.BRANCH_NAME }}";
+              return artifact.name == "artifact1-${{ github.event.workflow_run.head_branch }}";
             })[0];
 
             if (matchArtifact) {
