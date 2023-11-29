@@ -24,7 +24,7 @@ jobs:
 
       - name: Set Environment Variables
         run: |
-          export $(dotenv -f .env | xargs)
+          export $(.env < xargs)
           echo "Environment Name: $VAR1"
           echo "API Key: $VAR2"
 
