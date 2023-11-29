@@ -51,8 +51,8 @@ jobs:
       #   run: echo "source .env.temp" >> $GITHUB_ENV
       - name: test1
         run: |
-          source .env.temp
-          echo "${{ env.REACT_APP_BASE_URL }}"
+          dotenv -e .env.temp
+          echo "try: $REACT_APP_BASE_URL"
       # - name: Upload artifact
       #   uses: actions/upload-artifact@v3
       #   with:
