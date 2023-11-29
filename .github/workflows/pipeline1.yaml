@@ -24,7 +24,7 @@ jobs:
 
       - name: Set Environment Variables
         run: |
-          xargs < .env
+          export $(xargs < .env)
           echo "Environment Name: $VAR1"
           echo "API Key: $VAR2"
 
