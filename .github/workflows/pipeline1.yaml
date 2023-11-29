@@ -27,6 +27,7 @@ jobs:
           export $(xargs < .env)
           echo "Environment Name: $VAR1"
           echo "API Key: $VAR2"
+          printenv
 
         
      
