@@ -45,12 +45,12 @@ jobs:
           envkey_REACT_APP_DOMAIN: https://temporary-value-url
           file_name: .env.temp
           fail_on_empty: false
-      - name: Source .env.production
-        run: echo "source .env.temp" >> $GITHUB_ENV
+      # - name: Source .env.production
+      #   run: echo "source .env.temp" >> $GITHUB_ENV
       - name: test1
         run: |
           source .env.temp
-          printenv
+          echo "${{ env.REACT_APP_BASE_URL }}"
       # - name: Upload artifact
       #   uses: actions/upload-artifact@v3
       #   with:
