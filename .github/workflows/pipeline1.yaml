@@ -43,15 +43,14 @@ jobs:
           envkey_REACT_APP_AUTH0_CALLBACK_URL: https://temporary-value-url/callback
           envkey_REACT_APP_AUTH0_AUDIENCE: https://dev.api.identityscience.ai
           envkey_REACT_APP_DOMAIN: https://temporary-value-url
-          file_name: .env.temp
+          file_name: .env
           fail_on_empty: false
       - name: Test output
-        run: cat .env.temp
+        run: cat .env
       # - name: Source .env.production
       #   run: echo "source .env.temp" >> $GITHUB_ENV
       - name: test1
         run: |
-          dotenv -e .env.temp
           echo "try: $REACT_APP_BASE_URL"
       # - name: Upload artifact
       #   uses: actions/upload-artifact@v3
