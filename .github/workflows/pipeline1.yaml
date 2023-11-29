@@ -22,8 +22,6 @@ jobs:
           envkey_REACT_APP_DOMAIN: https://temporary-value-url
           file_name: .env.temp
           fail_on_empty: false
-      - name: NPM Install
-        run: npm install
       - name: NPM Build
         run: |
           export $(xargs < .env.temp)
