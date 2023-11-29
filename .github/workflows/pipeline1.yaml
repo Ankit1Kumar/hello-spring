@@ -45,6 +45,8 @@ jobs:
           envkey_REACT_APP_DOMAIN: https://temporary-value-url
           file_name: .env.temp
           fail_on_empty: false
+      - name: Test output
+        run: cat .env.production
       # - name: Source .env.production
       #   run: echo "source .env.temp" >> $GITHUB_ENV
       - name: test1
