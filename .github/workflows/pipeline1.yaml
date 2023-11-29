@@ -23,13 +23,10 @@ jobs:
           fail_on_empty: false
 
       - name: Set Environment Variables
-        run: dotenv -f .env
-
-      - name: Use Environment Variables
         run: |
+          export $(dotenv -f .env | xargs)
           echo "Environment Name: $VAR1"
           echo "API Key: $VAR2"
-          # Add more commands that use the environment variables
 
         
      
