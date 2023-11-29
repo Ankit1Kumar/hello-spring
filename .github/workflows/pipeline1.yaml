@@ -47,8 +47,8 @@ jobs:
           fail_on_empty: false
       - name: Test output
         run: cat .env
-      # - name: Source .env.production
-      #   run: echo "source .env.temp" >> $GITHUB_ENV
+      - name: Set Environment Variables
+        run: dotenv -f .env
       - name: test1
         run: |
           echo "try: $REACT_APP_BASE_URL"
