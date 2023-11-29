@@ -48,7 +48,7 @@ jobs:
       - name: Test output
         run: cat .env
       - name: Set Environment Variables
-        run: export $(cat .env)
+        run: xargs < .env
       - name: test1
         run: |
           echo "try: $REACT_APP_BASE_URL"
