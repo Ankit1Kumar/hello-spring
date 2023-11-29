@@ -52,6 +52,7 @@ jobs:
       - name: test1
         run: |
           echo "try: $REACT_APP_BASE_URL"
+          printenv
       # - name: Upload artifact
       #   uses: actions/upload-artifact@v3
       #   with:
