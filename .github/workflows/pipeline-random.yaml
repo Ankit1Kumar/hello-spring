@@ -1,4 +1,4 @@
-name: Java CI with mavend
+name: pipeline-random
 
 on:
   push:
