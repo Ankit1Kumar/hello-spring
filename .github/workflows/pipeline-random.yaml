@@ -1,4 +1,4 @@
-name: pipeline-random
+ name: pipeline-random
 
 on:
   push:
