@@ -9,6 +9,4 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
-      
-      # Add your actions here that you want to execute when the workflow is manually triggered
+        run: echo "done"
