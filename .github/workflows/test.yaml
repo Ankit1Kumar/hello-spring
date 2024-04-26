@@ -1,0 +1,14 @@
+name: Manual Trigger Workflow
+
+on:
+  create:
+    paths:
+      - '.github/workflows/random.yaml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Echo Message
+        run: echo "Workflow manually triggered."
