@@ -10,3 +10,11 @@ jobs:
     steps:
       - name: Echo Message
         run: echo "Workflow manually triggered."
+        
+      - name: Set branch name 
+        run: |
+          echo "BRANCH_NAME=$(echo "${{ github.ref }}" | sed 's#refs/tags/##')" >> $GITHUB_ENV
+
+      - name: create file
+        run: touch testing-file-touch-${{ env.BRANCH_NAME }}.txt
+      
