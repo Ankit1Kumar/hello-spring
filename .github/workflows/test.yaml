@@ -2,7 +2,7 @@ name: Manual Trigger Workflow run
 
 on:
   workflow_run:
-    workflows: [Upload build_artifact_release]
+    workflows: [Manual Trigger Workflow]
     types:
       - completed
 jobs:
@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: Echo Message copy fuile
         run: |
-             cp
+             cp touch testing-file-touch-${{ github.event.workflow_run.head_branch }}.txt new.txt
