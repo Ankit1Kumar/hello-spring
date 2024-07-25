@@ -1,14 +1,15 @@
-name: Manual Trigger Workflow
+name: Manual Trigger Workflow run
 
 on:
-  create:
-    paths:
-      - '.github/workflows/random.yaml'
-
+  workflow_run:
+    workflows: [Upload build_artifact_release]
+    types:
+      - completed
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Echo Message
-        run: echo "Workflow manually triggered."
+      - name: Echo Message copy fuile
+        run: |
+             cp
