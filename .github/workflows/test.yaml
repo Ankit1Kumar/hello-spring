@@ -1,14 +1,15 @@
-name: Manual Trigger Workflow
+name: Manual Trigger Workflow run
 
 on:
-  create:
-    paths:
-      - '.github/workflows/random.yaml'
-
+  workflow_run:
+    workflows: [Manual Trigger Workflow]
+    types:
+      - completed
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Echo Message
-        run: echo "Workflow manually triggered."
+      - name: Echo Message copy fuile
+        run: |
+             cp touch testing-file-touch-${{ github.event.workflow_run.head_branch }}.txt new.txt
